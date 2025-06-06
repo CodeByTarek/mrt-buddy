@@ -54,7 +54,6 @@ import org.koin.core.parameter.parametersOf
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TransactionListScreen(
-    modifier: Modifier = Modifier,
     cardIdm: String,
     onBack: () -> Unit,
     paddingValues: PaddingValues
@@ -149,7 +148,7 @@ fun TransactionListScreen(
 
 @Composable
 fun TransactionItem(trxEntity: TransactionEntityWithAmount) {
-    val transaction = trxEntity.transactionEntity;
+    val transaction = trxEntity.transactionEntity
     val isDarkTheme = isSystemInDarkTheme()
     val transactionType = if (trxEntity.amount != null && trxEntity.amount > 0) {
         TransactionType.BalanceUpdate
